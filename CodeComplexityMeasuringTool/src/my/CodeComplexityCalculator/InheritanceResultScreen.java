@@ -168,6 +168,7 @@ public class InheritanceResultScreen extends javax.swing.JFrame {
         this.dispose();//to close the current jframe 
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    //Weight Button
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 
         InheritanceWeights iw = new InheritanceWeights(classes , DirectInheritence , IndirectInheritence );

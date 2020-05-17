@@ -150,7 +150,7 @@ public class InheritanceWeights extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_jButton1ActionPerformed
-
+    //Save
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         int index1 = Integer.parseInt(jComboBox1.getSelectedItem().toString());
         int index2 = Integer.parseInt(jComboBox2.getSelectedItem().toString());
