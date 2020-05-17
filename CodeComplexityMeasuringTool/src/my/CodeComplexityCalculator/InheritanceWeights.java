@@ -6,6 +6,7 @@
 package my.CodeComplexityCalculator;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -14,20 +15,20 @@ import javax.swing.table.DefaultTableModel;
  */
 public class InheritanceWeights extends javax.swing.JFrame {
 
- 
-        
-      ArrayList<String> classes = new ArrayList<String>();
-     ArrayList<Integer> DirectInheritence = new ArrayList<Integer>();
-      ArrayList<Integer> IndirectInheritence = new ArrayList<Integer>();
+    ArrayList<String> classes = new ArrayList<String>();
+    ArrayList<Integer> DirectInheritence = new ArrayList<Integer>();
+    ArrayList<Integer> IndirectInheritence = new ArrayList<Integer>();
 
-    public InheritanceWeights(ArrayList<String> classes , ArrayList<Integer> directInheritence ,  ArrayList<Integer> IndirectInheritence){
+    ArrayList<String> all = new ArrayList<String>();
+
+    public InheritanceWeights(ArrayList<String> classes, ArrayList<Integer> directInheritence, ArrayList<Integer> IndirectInheritence) {
         initComponents();
-         this.classes = classes ;
-          this.DirectInheritence = directInheritence;
-          this.IndirectInheritence = IndirectInheritence;
-          
+        this.classes = classes;
+        this.DirectInheritence = directInheritence;
+        this.IndirectInheritence = IndirectInheritence;
+
     }
-  
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -86,26 +87,26 @@ public class InheritanceWeights extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addGap(24, 24, 24))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(79, 79, 79)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(190, 190, 190))
         );
         layout.setVerticalGroup(
@@ -142,10 +143,12 @@ public class InheritanceWeights extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       MainScreen nextScreen = new MainScreen();
-        nextScreen.setVisible(true);
-
+        InheritanceResultScreen resultScreen = new InheritanceResultScreen(0, 1, 2, 3, 4, classes, DirectInheritence, IndirectInheritence);
+        resultScreen.setVisible(true);
         this.dispose();//to close the current jframe         // TODO add your handling code here:
+
+
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -154,14 +157,15 @@ public class InheritanceWeights extends javax.swing.JFrame {
         int index3 = Integer.parseInt(jComboBox3.getSelectedItem().toString());
         int index4 = Integer.parseInt(jComboBox4.getSelectedItem().toString());
         int index5 = Integer.parseInt(jComboBox5.getSelectedItem().toString());
+        int total = index1 + index2 + index3 + index4 + index5;
         System.out.println(index1);
+        JOptionPane.showMessageDialog(null, "Save Successsfuly and Total :" + total);
+
         /*InheritanceResultScreen resultScreen = new InheritanceResultScreen( index1 , index2 , index3 , index4 , index5 ,classes , DirectInheritence , IndirectInheritence );
         resultScreen.setVisible(true);
         this.dispose();*/
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
