@@ -117,6 +117,11 @@ public class MainScreen extends javax.swing.JFrame {
         jLabel3.setText("Complexity of a program due to:");
 
         jButton5.setText("Variables");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setText("Methods");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -388,6 +393,12 @@ public class MainScreen extends javax.swing.JFrame {
         Cstructure csn = new Cstructure();
         csn.setVisible(true);
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        VariableComplexity v =new VariableComplexity();
+        v.setVisible(true);
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
